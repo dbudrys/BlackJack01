@@ -19,7 +19,8 @@
         android:text="BLACK JACK!!!!!!"
         android:textSize="36sp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:id="@+id/text_view" />
 
     <Button
         android:text="play"
