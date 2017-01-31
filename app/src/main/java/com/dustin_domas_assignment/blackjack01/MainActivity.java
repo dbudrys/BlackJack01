@@ -1,6 +1,7 @@
 package com.dustin_domas_assignment.blackjack01;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -42,16 +43,16 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-/*
+
         Button about_b = (Button) findViewById(R.id.about_button);
         about_b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                goToWiki("https://en.wikipedia.org/wiki/Pig_%28dice_game%29");
+                goToRules("https://www.pagat.com/banking/blackjack.html");
             }
         });
 
-*/
+
 
     }
 
@@ -62,5 +63,14 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-   //deleted this function 
-}
+
+    private void  goToRules (String url) {
+        Uri uri =  Uri.parse(url);
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);  //implicits intent open anything what android wants
+        startActivity(intent);
+    }
+
+
+
+
+}//end of MainActivity
