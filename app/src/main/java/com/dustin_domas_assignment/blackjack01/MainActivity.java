@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        Button about_b = (Button) findViewById(R.id.about_button);
+        Button about_b = (Button) findViewById(R.id.rules_button);
         about_b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void  goToRules (String url) {
         Uri uri =  Uri.parse(url);
-        Intent intent = new Intent(Intent.ACTION_VIEW, uri);  //implicits intent open anything what android wants
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);  //implicit intent open anything what android wants
         startActivity(intent);
     }
 
