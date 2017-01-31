@@ -2,4 +2,8 @@
     <string name="app_name">BlackJack01</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_play">PlayActivity</string>
+    <string name="Black">BLACK JACK!!!!!!</string>
+    <string name="Go_Play">Play</string>
+    <string name="ABOUT">About</string>
+    <string name="RULES">Rules</string>
 </resources>
