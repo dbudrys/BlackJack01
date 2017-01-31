@@ -42,6 +42,16 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+/*
+        Button about_b = (Button) findViewById(R.id.about_button);
+        about_b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToWiki("https://en.wikipedia.org/wiki/Pig_%28dice_game%29");
+            }
+        });
+
+*/
 
     }
 
