@@ -27,4 +27,127 @@
         android:layout_marginTop="131dp"
         android:id="@+id/editText"
         tools:ignore="HardcodedText" />
+
+    <TextView
+        android:text="Dealer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/editText"
+        android:layout_alignEnd="@+id/editText"
+        android:layout_marginRight="75dp"
+        android:layout_marginEnd="75dp"
+        android:id="@+id/Dealer_TV"
+        tools:ignore="HardcodedText"
+        android:textSize="25sp" />
+
+    <EditText
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/Player_Hand"
+        android:layout_alignBottom="@+id/Player_TV"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="45dp" />
+
+    <EditText
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_marginTop="25dp"
+        android:id="@+id/Dealer_Hand"
+        android:layout_below="@+id/Dealer_TV"
+        android:layout_alignLeft="@+id/Player_Hand"
+        android:layout_alignStart="@+id/Player_Hand" />
+
+    <TextView
+        android:text="BETS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:id="@+id/BETS_TV"
+        android:layout_alignTop="@+id/Player_Hand"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="18dp" />
+
+    <TextView
+        android:text="Player"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="53dp"
+        android:id="@+id/Player_TV"
+        android:textSize="25sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/Player_Hand"
+        android:layout_alignEnd="@+id/Player_Hand" />
+
+    <Button
+        android:text="$50"
+        android:layout_width="55dp"
+        android:layout_height="45dp"
+        android:layout_alignTop="@+id/twentyFive_button"
+        android:layout_toRightOf="@+id/twentyFive_button"
+        android:layout_toEndOf="@+id/twentyFive_button"
+        android:id="@+id/fifty_button" />
+
+    <Button
+        android:text="$25"
+        android:layout_height="45dp"
+        android:id="@+id/twentyFive_button"
+        android:layout_width="55dp"
+        android:layout_above="@+id/Player_TV"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="$100"
+        android:layout_width="75dp"
+        android:layout_height="45dp"
+        android:id="@+id/hundred_button"
+        android:layout_below="@+id/fifty_button"
+        android:layout_alignLeft="@+id/BETS_TV"
+        android:layout_alignStart="@+id/BETS_TV" />
+
+    <Button
+        android:text="Hit"
+        android:layout_width="55dp"
+        android:layout_height="45dp"
+        android:layout_above="@+id/Player_TV"
+        android:layout_toRightOf="@+id/Player_Hand"
+        android:layout_toEndOf="@+id/Player_Hand"
+        android:layout_marginLeft="14dp"
+        android:layout_marginStart="14dp"
+        android:id="@+id/hit_button" />
+
+    <Button
+        android:text="Fold"
+        android:layout_height="45dp"
+        android:id="@+id/fold_button"
+        android:layout_width="60dp"
+        android:layout_alignTop="@+id/hit_button"
+        android:layout_toRightOf="@+id/hit_button"
+        android:layout_toEndOf="@+id/hit_button" />
+
+    <Button
+        android:text="Exit"
+        android:layout_width="75dp"
+        android:layout_height="45dp"
+        android:id="@+id/exit_button"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="How to Play"
+        android:id="@+id/howToPlay_button"
+        android:layout_width="95dp"
+        android:layout_height="55dp"
+        android:layout_alignBaseline="@+id/exit_button"
+        android:layout_alignBottom="@+id/exit_button"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>
