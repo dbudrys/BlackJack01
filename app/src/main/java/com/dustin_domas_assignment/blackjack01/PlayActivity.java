@@ -37,8 +37,10 @@ public class PlayActivity extends AppCompatActivity {
         findViewById(R.id.hundred_button).setOnClickListener(new BetListener());
         Button Fold;
         findViewById(R.id.fold_button).setOnClickListener(new FoldListener());
-
-
+        Button Exit;
+        findViewById(R.id.exit_button).setOnClickListener(new ExitListener());
+        Button about;
+        findViewById(R.id.exit_button).setOnClickListener(new AboutListener());
         //findViewById(R.id.sound_button).setOnClickListener(new StartListener());
 
 
@@ -80,5 +82,26 @@ public class PlayActivity extends AppCompatActivity {
         }
     }
 
+    class ExitListener implements View.OnClickListener{
+
+        @Override
+        public void onClick(View v) {
+            /*if(){
+
+
+            }*/
+        }
+    }
+
+    class AboutListener implements View.OnClickListener{
+
+        @Override
+        public void onClick(View v) {
+            /*if(){
+
+
+            }*/
+        }
+    }
 
 }

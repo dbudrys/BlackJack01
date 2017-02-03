@@ -13,21 +13,6 @@
     tools:context="com.dustin_domas_assignment.blackjack01.PlayActivity"
     tools:showIn="@layout/activity_play">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="This is PLAY activity"
-        android:ems="10"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="47dp"
-        android:layout_marginStart="47dp"
-        android:layout_marginTop="131dp"
-        android:id="@+id/editText"
-        tools:ignore="HardcodedText" />
-
     <TextView
         android:text="Dealer"
         android:layout_width="wrap_content"
