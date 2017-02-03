@@ -17,6 +17,8 @@ public class PlayActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        /*
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -25,6 +27,8 @@ public class PlayActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+       */
 
         //New game buttons
         Button hit;
