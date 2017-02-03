@@ -10,27 +10,6 @@
     tools:showIn="@layout/activity_play"
     android:background="#7ABB77">
 
-    <EditText
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/Player_Hand"
-        android:layout_alignBottom="@+id/Player_TV"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="45dp" />
-
-    <EditText
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:layout_marginTop="25dp"
-        android:id="@+id/Dealer_Hand"
-        android:layout_below="@+id/Dealer_TV"
-        android:layout_alignLeft="@+id/Player_Hand"
-        android:layout_alignStart="@+id/Player_Hand" />
-
     <Button
         android:text="$50"
         android:layout_width="55dp"
@@ -40,18 +19,6 @@
         android:layout_toEndOf="@+id/twentyFive_button"
         android:id="@+id/fifty_button" />
 
-    <TextView
-        android:text="Dealer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/Dealer_TV"
-        tools:ignore="HardcodedText"
-        android:textSize="25sp"
-        android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/Dealer_Hand"
-        android:layout_alignStart="@+id/Dealer_Hand"
-        android:textColor="#FFD177" />
-
     <Button
         android:text="Exit"
         android:layout_width="75dp"
@@ -60,54 +27,6 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
-
-    <Button
-        android:text="How to Play"
-        android:id="@+id/howToPlay_button"
-        android:layout_width="95dp"
-        android:layout_height="55dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <Button
-        android:text="$25"
-        android:layout_height="45dp"
-        android:id="@+id/twentyFive_button"
-        android:layout_width="55dp"
-        android:layout_alignBottom="@+id/Player_Hand"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:text="Hit"
-        android:layout_width="55dp"
-        android:layout_height="45dp"
-        android:id="@+id/hit_button"
-        android:layout_alignBaseline="@+id/hold_button"
-        android:layout_alignBottom="@+id/hold_button"
-        android:layout_toLeftOf="@+id/hold_button"
-        android:layout_toStartOf="@+id/hold_button" />
-
-    <Button
-        android:text="Fold"
-        android:layout_height="45dp"
-        android:id="@+id/hold_button"
-        android:layout_width="60dp"
-        android:layout_alignBottom="@+id/Player_Hand"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <TextView
-        android:text="Player"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="58dp"
-        android:id="@+id/Player_TV"
-        android:textSize="25sp"
-        android:textColor="#FFD177"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/Player_Hand"
-        android:layout_alignEnd="@+id/Player_Hand" />
 
     <TextView
         android:text="BETS"
@@ -119,27 +38,181 @@
         android:layout_alignRight="@+id/exit_button"
         android:layout_alignEnd="@+id/exit_button" />
 
-    <Button
-        android:text="$100"
-        android:layout_width="75dp"
-        android:layout_height="45dp"
-        android:id="@+id/hundred_button"
-        android:layout_below="@+id/fifty_button"
-        android:layout_alignRight="@+id/fifty_button"
-        android:layout_alignEnd="@+id/fifty_button"
-        android:layout_marginRight="16dp"
-        android:layout_marginEnd="16dp" />
-
     <TextView
         android:text="Moves"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/Moves_View"
         android:textColor="#FFD177"
-        android:layout_marginLeft="18dp"
-        android:layout_marginStart="18dp"
         android:layout_above="@+id/hit_button"
-        android:layout_alignLeft="@+id/howToPlay_button"
-        android:layout_alignStart="@+id/howToPlay_button" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="26dp"
+        android:layout_marginEnd="26dp"
+        android:layout_alignTop="@+id/BETS_TV" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/ic_delete"
+        android:layout_alignBottom="@+id/Card2_P"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/Card3_P" />
+
+    <TextView
+        android:text="Player"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="62dp"
+        android:id="@+id/Player_TV"
+        android:textSize="25sp"
+        android:textColor="#FFD177"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/ic_delete"
+        android:id="@+id/Card2_P"
+        android:layout_alignTop="@+id/Card_1_P1"
+        android:layout_toLeftOf="@+id/Player_TV"
+        android:layout_toStartOf="@+id/Player_TV" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/ic_delete"
+        android:id="@+id/Card_1_P1"
+        android:layout_marginBottom="37dp"
+        android:layout_above="@+id/fifty_button"
+        android:layout_toRightOf="@+id/twentyFive_button"
+        android:layout_toEndOf="@+id/twentyFive_button" />
+
+    <Button
+        android:text="$100"
+        android:layout_width="75dp"
+        android:layout_height="45dp"
+        android:id="@+id/hundred_button"
+        android:layout_alignBottom="@+id/Player_TV"
+        android:layout_alignRight="@+id/Card_1_P1"
+        android:layout_alignEnd="@+id/Card_1_P1" />
+
+    <Button
+        android:text="Hold"
+        android:layout_height="45dp"
+        android:id="@+id/hold_button"
+        android:layout_width="60dp"
+        android:layout_below="@+id/Card_1_P1"
+        android:layout_toRightOf="@+id/hit_button"
+        android:layout_toEndOf="@+id/hit_button" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/ic_delete"
+        android:id="@+id/Card5_D"
+        android:layout_alignTop="@+id/Card1_D"
+        android:layout_toEndOf="@+id/hit_button"
+        android:layout_alignLeft="@+id/Card5_P"
+        android:layout_alignStart="@+id/Card5_P" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/ic_delete"
+        android:id="@+id/Card3_D"
+        android:layout_alignTop="@+id/Card2_D"
+        android:layout_alignLeft="@+id/Card3_P"
+        android:layout_alignStart="@+id/Card3_P" />
+
+    <TextView
+        android:text="Dealer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Dealer_TV"
+        tools:ignore="HardcodedText"
+        android:textSize="25sp"
+        android:textColor="#FFD177"
+        android:layout_alignBaseline="@+id/exit_button"
+        android:layout_alignBottom="@+id/exit_button"
+        android:layout_alignRight="@+id/Player_TV"
+        android:layout_alignEnd="@+id/Player_TV" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/ic_delete"
+        android:id="@+id/Card5_P"
+        android:layout_alignTop="@+id/Card3_P"
+        android:layout_alignRight="@+id/Moves_View"
+        android:layout_alignEnd="@+id/Moves_View"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <Button
+        android:text="Play"
+        android:id="@+id/Play_button"
+        android:layout_width="95dp"
+        android:layout_height="55dp"
+        android:layout_above="@+id/Card3_P"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="70dp" />
+
+    <Button
+        android:text="$25"
+        android:layout_height="45dp"
+        android:id="@+id/twentyFive_button"
+        android:layout_width="55dp"
+        android:layout_above="@+id/hundred_button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Hit"
+        android:layout_width="55dp"
+        android:layout_height="45dp"
+        android:id="@+id/hit_button"
+        android:layout_alignBaseline="@+id/hold_button"
+        android:layout_alignBottom="@+id/hold_button"
+        android:layout_toLeftOf="@+id/Moves_View"
+        android:layout_toStartOf="@+id/Moves_View" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/ic_delete"
+        android:id="@+id/Card4_D"
+        android:layout_alignTop="@+id/Card3_D"
+        android:layout_toRightOf="@+id/Play_button"
+        android:layout_toEndOf="@+id/Play_button" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/ic_delete"
+        android:id="@+id/Card4_P"
+        android:layout_alignTop="@+id/Card5_P"
+        android:layout_toRightOf="@+id/Play_button"
+        android:layout_toEndOf="@+id/Play_button" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/ic_delete"
+        android:id="@+id/Card1_D"
+        android:layout_marginTop="36dp"
+        android:layout_below="@+id/exit_button"
+        android:layout_alignLeft="@+id/Card_1_P1"
+        android:layout_alignStart="@+id/Card_1_P1" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/ic_delete"
+        android:id="@+id/Card2_D"
+        android:layout_alignTop="@+id/Card1_D"
+        android:layout_alignLeft="@+id/Card2_P"
+        android:layout_alignStart="@+id/Card2_P" />
 
 </RelativeLayout>
