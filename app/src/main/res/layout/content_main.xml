@@ -23,7 +23,7 @@
         android:id="@+id/text_view"
         android:text="@string/Black"
         android:textStyle="bold"
-        android:textColor="#A09E9E"/>
+        android:textColor="@color/colorForTexr"/>
 
     <Button
         android:layout_width="150dp"
