@@ -35,3 +35,6 @@ public class AboutActivity extends AppCompatActivity {
     }
 
 }
+
+
+// check this out
