@@ -36,7 +36,7 @@ public class PlayActivity extends AppCompatActivity {
         Button bet100;
         findViewById(R.id.hundred_button).setOnClickListener(new BetListener());
         Button Fold;
-        findViewById(R.id.fold_button).setOnClickListener(new FoldListener());
+        findViewById(R.id.hold_button).setOnClickListener(new HoldListener());
         Button Exit;
         findViewById(R.id.exit_button).setOnClickListener(new ExitListener());
         Button about;
@@ -71,7 +71,7 @@ public class PlayActivity extends AppCompatActivity {
         }
     }
 
-    class FoldListener implements View.OnClickListener{
+    class HoldListener implements View.OnClickListener{
 
         @Override
         public void onClick(View v) {
