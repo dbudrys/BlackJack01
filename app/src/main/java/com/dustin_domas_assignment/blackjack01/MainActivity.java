@@ -44,27 +44,33 @@ public class MainActivity extends AppCompatActivity {
 
                 startActivity(intent);
             }
-        });
+        });// end of onclick
 
 
 
-        Button about_b = (Button) findViewById(R.id.rules_button);
-        about_b.setOnClickListener(new View.OnClickListener() {
+        Button rules_b = (Button) findViewById(R.id.rules_button);
+        rules_b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 goToRules("https://www.pagat.com/banking/blackjack.html");
             }
-        });
+        });  //end of onclick
+        
+
+
+        Button about_b = (Button) findViewById(R.id.about_button);
+        about_b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),
+                        AboutActivity.class);
+
+                startActivity(intent);
+            }
+        }); // end of on click
 
 
 
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
     }
 
 
