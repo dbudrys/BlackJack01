@@ -11,20 +11,8 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.dustin_domas_assignment.blackjack01.PlayActivity"
-    tools:showIn="@layout/activity_play">
-
-    <TextView
-        android:text="Dealer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/editText"
-        android:layout_alignEnd="@+id/editText"
-        android:layout_marginRight="75dp"
-        android:layout_marginEnd="75dp"
-        android:id="@+id/Dealer_TV"
-        tools:ignore="HardcodedText"
-        android:textSize="25sp" />
+    tools:showIn="@layout/activity_play"
+    android:background="#7ABB77">
 
     <EditText
         android:layout_width="75dp"
@@ -57,7 +45,8 @@
         android:layout_alignTop="@+id/Player_Hand"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="18dp" />
+        android:layout_marginTop="18dp"
+        android:textColor="#FFD177" />
 
     <TextView
         android:text="Player"
@@ -68,7 +57,8 @@
         android:textSize="25sp"
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/Player_Hand"
-        android:layout_alignEnd="@+id/Player_Hand" />
+        android:layout_alignEnd="@+id/Player_Hand"
+        android:textColor="#FFD177" />
 
     <Button
         android:text="$50"
@@ -117,6 +107,18 @@
         android:layout_toRightOf="@+id/hit_button"
         android:layout_toEndOf="@+id/hit_button" />
 
+    <TextView
+        android:text="Dealer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Dealer_TV"
+        tools:ignore="HardcodedText"
+        android:textSize="25sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/Dealer_Hand"
+        android:layout_alignStart="@+id/Dealer_Hand"
+        android:textColor="#FFD177" />
+
     <Button
         android:text="Exit"
         android:layout_width="75dp"
@@ -131,8 +133,7 @@
         android:id="@+id/howToPlay_button"
         android:layout_width="95dp"
         android:layout_height="55dp"
-        android:layout_alignBaseline="@+id/exit_button"
-        android:layout_alignBottom="@+id/exit_button"
+        android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 </RelativeLayout>
