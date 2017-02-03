@@ -11,42 +11,53 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.dustin_domas_assignment.blackjack01.MainActivity"
-    tools:showIn="@layout/activity_main">
+    tools:showIn="@layout/activity_main"
+    android:background="@drawable/background">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="36sp"
+        android:textSize="42sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/text_view"
-        android:text="@string/Black" />
+        android:text="@string/Black"
+        android:textStyle="bold"
+        android:textColor="#A09E9E"/>
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
         android:layout_below="@+id/text_view"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="102dp"
         android:id="@+id/play_button"
-        android:text="@string/Go_Play" />
+        android:text="@string/Go_Play"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/shape_button"
+        />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
         android:layout_below="@+id/play_button"
         android:layout_alignLeft="@+id/play_button"
         android:layout_alignStart="@+id/play_button"
         android:layout_marginTop="63dp"
         android:id="@+id/rules_button"
-        android:text="@string/RULES" />
+        android:text="@string/RULES"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/shape_button"
+        />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
         android:layout_marginTop="70dp"
         android:id="@+id/about_button"
         android:layout_below="@+id/rules_button"
         android:layout_centerHorizontal="true"
-        android:text="@string/ABOUT" />
+        android:text="@string/ABOUT"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/shape_button"/>
 </RelativeLayout>

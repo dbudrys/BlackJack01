@@ -6,4 +6,5 @@
     <string name="Go_Play">Play</string>
     <string name="ABOUT">About</string>
     <string name="RULES">Rules</string>
+    <string name="title_activity_about">AboutActivity</string>
 </resources>
