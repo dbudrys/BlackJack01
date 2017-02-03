@@ -46,7 +46,7 @@ public class PlayActivity extends AppCompatActivity {
         Button Exit;
         findViewById(R.id.exit_button).setOnClickListener(new ExitListener());
         Button about;
-        findViewById(R.id.exit_button).setOnClickListener(new AboutListener());
+        findViewById(R.id.Play_button).setOnClickListener(new PlayListener());
         //findViewById(R.id.sound_button).setOnClickListener(new StartListener());
 
 
@@ -55,7 +55,23 @@ public class PlayActivity extends AppCompatActivity {
 
     }
 
+    class PlayListener implements View.OnClickListener{
 
+        @Override
+        public void onClick(View v) {
+
+            intializeGameBoard();
+
+            /*if(){
+
+
+            }*/
+        }
+    }
+
+    protected void intializeGameBoard(){
+        Cards card;
+    }
     //listeners to game buttons
     class HitListener implements View.OnClickListener{
 
@@ -101,15 +117,6 @@ public class PlayActivity extends AppCompatActivity {
         }
     }
 
-    class AboutListener implements View.OnClickListener{
 
-        @Override
-        public void onClick(View v) {
-            /*if(){
-
-
-            }*/
-        }
-    }
 
 }
