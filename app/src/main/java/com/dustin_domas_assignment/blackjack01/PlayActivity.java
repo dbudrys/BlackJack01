@@ -10,6 +10,10 @@ import android.widget.Button;
 
 public class PlayActivity extends AppCompatActivity {
 
+    private int [] getCard = {
+
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
