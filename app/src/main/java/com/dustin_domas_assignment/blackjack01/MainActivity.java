@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                 goToRules("https://www.pagat.com/banking/blackjack.html");
             }
         });  //end of onclick
-        
+
 
 
         Button about_b = (Button) findViewById(R.id.about_button);
