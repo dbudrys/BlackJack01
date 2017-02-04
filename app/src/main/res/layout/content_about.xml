@@ -27,4 +27,23 @@
         android:textColor="@color/colorForTexr"
         />
 
+    <Button
+        android:text="Developers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_view"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="59dp"
+        android:id="@+id/dev_button"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/shape_button"
+        />
+
+
+    <TextView android:id="@+id/alert_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:textColor="#FFF"
+        />
+
 </RelativeLayout>
