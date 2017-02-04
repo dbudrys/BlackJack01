@@ -157,16 +157,6 @@
         android:layout_marginEnd="16dp" />
 
     <Button
-        android:text="Play"
-        android:id="@+id/Play_button"
-        android:layout_width="95dp"
-        android:layout_height="55dp"
-        android:layout_above="@+id/Card3_P"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="70dp"
-        android:background="@drawable/shape_button"/>
-
-    <Button
         android:text="$25"
         android:layout_height="45dp"
         android:id="@+id/twentyFive_button"
@@ -182,8 +172,8 @@
         app:srcCompat="@android:drawable/ic_delete"
         android:id="@+id/Card4_D"
         android:layout_alignTop="@+id/Card3_D"
-        android:layout_toRightOf="@+id/Play_button"
-        android:layout_toEndOf="@+id/Play_button" />
+        android:layout_toRightOf="@+id/Card4_P"
+        android:layout_toEndOf="@+id/Card4_P" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -191,8 +181,8 @@
         app:srcCompat="@android:drawable/ic_delete"
         android:id="@+id/Card4_P"
         android:layout_alignTop="@+id/Card5_P"
-        android:layout_toRightOf="@+id/Play_button"
-        android:layout_toEndOf="@+id/Play_button" />
+        android:layout_toRightOf="@+id/Dealer_TV"
+        android:layout_toEndOf="@+id/Dealer_TV" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -245,5 +235,15 @@
         android:layout_width="65dp"
         android:textSize="25sp"
         android:textColor="@color/colorForTexr" />
+
+    <Button
+        android:text="Play"
+        android:id="@+id/Play_button"
+        android:layout_width="95dp"
+        android:layout_height="55dp"
+        android:background="@drawable/shape_button"
+        android:layout_marginTop="75dp"
+        android:layout_below="@+id/Card3_D"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
