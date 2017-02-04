@@ -14,6 +14,8 @@ public class PlayActivity extends AppCompatActivity {
 
     };
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,20 +39,22 @@ public class PlayActivity extends AppCompatActivity {
        */
 
         //New game buttons
-        Button hit;
+        Button hit_button = new Button(this);
         findViewById(R.id.hit_button).setOnClickListener(new HitListener());
-        Button bet25;
+        Button bet25_button;
         findViewById(R.id.twentyFive_button).setOnClickListener(new BetListener());
-        Button bet50;
+        Button bet50_button;
         findViewById(R.id.fifty_button).setOnClickListener(new BetListener());
-        Button bet100;
+        Button bet100_button;
         findViewById(R.id.hundred_button).setOnClickListener(new BetListener());
-        Button Fold;
+        Button hold_button;
         findViewById(R.id.hold_button).setOnClickListener(new HoldListener());
-        Button Exit;
+        Button exit_button;
         findViewById(R.id.exit_button).setOnClickListener(new ExitListener());
-        Button about;
+
         findViewById(R.id.Play_button).setOnClickListener(new PlayListener());
+
+
         //findViewById(R.id.sound_button).setOnClickListener(new StartListener());
 
 
@@ -74,7 +78,12 @@ public class PlayActivity extends AppCompatActivity {
     }
 
     protected void intializeGameBoard(){
-        Cards card;
+
+        View play_bt = findViewById(R.id.Play_button);
+        play_bt.setVisibility(View.GONE);
+
+
+
     }
     //listeners to game buttons
     class HitListener implements View.OnClickListener{
