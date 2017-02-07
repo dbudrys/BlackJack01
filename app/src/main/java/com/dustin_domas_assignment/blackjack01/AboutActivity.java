@@ -66,14 +66,8 @@ public class AboutActivity extends AppCompatActivity {
                 AlertDialog.Builder builder = new AlertDialog.Builder(AboutActivity.this);
                 builder.setTitle("Source of Images");
 
+                //set builder Message to URL. String folder
                 builder.setMessage(R.string.credit_cards);
-
-
-
-
-              //  builder.setMessage(Html.fromHtml("<h2>Dustin Lobato</h2> <br>"
-                  //      + "<h2>Domas Budrys  <a href= "https://www.google.com"> </a> </h2>"));
-
 
                 builder.setPositiveButton("EXIT", new DialogInterface.OnClickListener() {
                     public void onClick (DialogInterface dialog, int id) {
@@ -83,10 +77,11 @@ public class AboutActivity extends AppCompatActivity {
                 });
 
 
-                //builder.setMovementMethod(LinkMovementMethod.getInstance());
-
                 AlertDialog alertDialog = builder.create();
                 alertDialog.show();
+
+                //Allows link to be clicked
+                Linkify.addLinks((TextView) alertDialog.findViewById(android.R.id.message), Linkify.ALL);
 
 
 
