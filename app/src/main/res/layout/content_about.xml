@@ -39,11 +39,17 @@
         android:background="@drawable/shape_button"
         />
 
-
-    <TextView android:id="@+id/alert_tv"
+    <Button
+        android:text="Credit"
         android:layout_width="wrap_content"
-        android:layout_height="fill_parent"
-        android:textColor="#FFF"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dev_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:id="@+id/credit_button"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/shape_button"
         />
+
 
 </RelativeLayout>
