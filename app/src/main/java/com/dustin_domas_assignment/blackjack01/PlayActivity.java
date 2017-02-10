@@ -12,6 +12,40 @@ import android.widget.ImageView;
 public class PlayActivity extends AppCompatActivity {
 
     private int [] getCard = {
+
+        R.drawable.aceofclubs,
+        R.drawable.aceofdiamonds,
+            R.drawable.aceofhearts,
+            R.drawable.aceofspades,
+            R.drawable.eightofclubs,
+            R.drawable.eightofdiamonds,
+            R.drawable.eightofhearts,
+            R.drawable.eightofspades,
+            R.drawable.fiveofclubs,
+            R.drawable.fiveofdiamonds,
+            R.drawable.fiveofhearts,
+            R.drawable.fiveofspades,
+            R.drawable.fourofclubs,
+            R.drawable.fourofdiamonds,
+            R.drawable.fourofhearts,
+            R.drawable.fourofspades,
+            R.drawable.jackofclubs,
+            R.drawable.jackofdiamonds,
+            R.drawable.jackofhearts,
+            R.drawable.jackofspades,
+            R.drawable.kingofclubs,
+            R.drawable.kingofdiamonds,
+            R.drawable.kingofhearts,
+            R.drawable.kingofspades,
+            R.drawable.nineofclubs,
+            R.drawable.nineofdiamonds,
+            R.drawable.nineofhearts,
+            R.drawable.nineofspades,
+            R.drawable.queenofdiamonds,
+            R.drawable.queenofhearts,
+            R.drawable.queenofspades,
+            R.drawable.quessofclubs,
+
             R.drawable.sevenofcluns,
             R.drawable.sevenofdiamonds,
             R.drawable.sevenofhearts,
@@ -33,6 +67,7 @@ public class PlayActivity extends AppCompatActivity {
             R.drawable.twoofhearts,
             R.drawable.twoofclubs,
             R.drawable.twoofspades
+
 
 
 
@@ -142,6 +177,7 @@ public class PlayActivity extends AppCompatActivity {
 
     //game is ready for bets etc
     protected void startGame(){
+
 
 
     }
