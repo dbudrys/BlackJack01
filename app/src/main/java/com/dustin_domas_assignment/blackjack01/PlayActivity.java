@@ -12,12 +12,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Random;
+
 public class PlayActivity extends AppCompatActivity {
 
     private int [] getCard = {
-
-        R.drawable.aceofclubs,
-        R.drawable.aceofdiamonds,
+            R.drawable.aceofclubs,
+            R.drawable.aceofdiamonds,
             R.drawable.aceofhearts,
             R.drawable.aceofspades,
             R.drawable.eightofclubs,
@@ -69,12 +70,23 @@ public class PlayActivity extends AppCompatActivity {
             R.drawable.twoofdiamonds,
             R.drawable.twoofhearts,
             R.drawable.twoofclubs,
-            R.drawable.twoofspades
+            R.drawable.twoofspades };
 
+    int [] number =
+            {11,11,11,11,
+                    8,8,8,8,
+                    5,5,5,5,
+                    4,4,4,4,
+                    10,10,10,10,
+                    10,10,10,10,
+                    9,9,9,9,
+                    10,10,10,10,
+                    7,7,7,7,
+                    6,6,6,6,
+                    10,10,10,10,
+                    3,3,3,3,
+                    2,2,2,2};
 
-
-
-    };
 
     ImageView  playerCard1;
     ImageView  playerCard2;
@@ -91,6 +103,7 @@ public class PlayActivity extends AppCompatActivity {
     TextView betAmount;
     TextView cashAmount;
 
+    private int randomArrayIndex;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -150,7 +163,7 @@ public class PlayActivity extends AppCompatActivity {
         dealerCard5 = (ImageView) findViewById(R.id.Card5_D);
 
 
-/*
+
         playerCard1.setImageResource(R.drawable.facedown);
         playerCard2.setImageResource(R.drawable.facedown);
         playerCard3.setImageResource(R.drawable.facedown);
@@ -161,7 +174,7 @@ public class PlayActivity extends AppCompatActivity {
         dealerCard2.setImageResource(R.drawable.facedown);
         dealerCard3.setImageResource(R.drawable.facedown);
         dealerCard4.setImageResource(R.drawable.facedown);
-        dealerCard5.setImageResource(R.drawable.facedown);*/
+        dealerCard5.setImageResource(R.drawable.facedown);
     }
 
     class PlayListener implements View.OnClickListener{
@@ -177,14 +190,36 @@ public class PlayActivity extends AppCompatActivity {
             }*/
         }
     }
+/********************************************
 
+            IntializeGameBoard Function
+********************************************
+ */
     protected void intializeGameBoard(){
 
        // View play_bt = findViewById(R.id.Play_button);
         //play_bt.setVisibility(View.GONE);
+        int sum = 0;
 
 
-        Toast.makeText(getApplicationContext(), "Your bet has been placed", Toast.LENGTH_SHORT).show();
+
+        Random rand = new Random();
+        randomArrayIndex = rand.nextInt(getCard.length);
+
+        //if() {
+            playerCard1.setImageResource(getCard[randomArrayIndex]);
+            sum+= number[randomArrayIndex];
+        randomArrayIndex = rand.nextInt(getCard.length);
+            playerCard2.setImageResource(getCard[randomArrayIndex]);
+            sum += number[randomArrayIndex];
+
+
+        cashAmount.setText(""+sum);
+        //}
+
+
+
+       // Toast.makeText(getApplicationContext(), "Your bet has been placed", Toast.LENGTH_SHORT).show();
 
 
         //startGame();
