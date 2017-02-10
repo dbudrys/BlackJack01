@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class PlayActivity extends AppCompatActivity {
 
@@ -14,7 +15,17 @@ public class PlayActivity extends AppCompatActivity {
 
     };
 
+    ImageView  playerCard1;
+    ImageView  playerCard2;
+    ImageView  playerCard3;
+    ImageView  playerCard4;
+    ImageView  playerCard5;
 
+    ImageView dealerCard1;
+    ImageView dealerCard2;
+    ImageView dealerCard3;
+    ImageView dealerCard4;
+    ImageView dealerCard5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,10 +68,18 @@ public class PlayActivity extends AppCompatActivity {
 
         //findViewById(R.id.sound_button).setOnClickListener(new StartListener());
 
-
-
-
-
+        //setting the player cards to an ImageView
+        playerCard1 = (ImageView) findViewById(R.id.Card_1_P1);
+        playerCard2 = (ImageView) findViewById(R.id.Card2_P);
+        playerCard3 = (ImageView) findViewById(R.id.Card3_P);
+        playerCard4 = (ImageView) findViewById(R.id.Card4_P);
+        playerCard5 = (ImageView) findViewById(R.id.Card5_P);
+        //setting dealer cards to an ImageView
+        dealerCard1 = (ImageView) findViewById(R.id.Card1_D);
+        dealerCard2 = (ImageView) findViewById(R.id.Card2_D);
+        dealerCard3 = (ImageView) findViewById(R.id.Card3_D);
+        dealerCard4 = (ImageView) findViewById(R.id.Card4_D);
+        dealerCard5 = (ImageView) findViewById(R.id.Card5_D);
     }
 
     class PlayListener implements View.OnClickListener{
@@ -82,8 +101,17 @@ public class PlayActivity extends AppCompatActivity {
         View play_bt = findViewById(R.id.Play_button);
         play_bt.setVisibility(View.GONE);
 
-
-
+        playerCard1.setImageResource(R.drawable.facedown);
+        playerCard2.setImageResource(R.drawable.facedown);
+        playerCard3.setImageResource(R.drawable.facedown);
+        playerCard4.setImageResource(R.drawable.facedown);
+        playerCard5.setImageResource(R.drawable.facedown);
+        //set dealer board
+        dealerCard1.setImageResource(R.drawable.facedown);
+        dealerCard2.setImageResource(R.drawable.facedown);
+        dealerCard3.setImageResource(R.drawable.facedown);
+        dealerCard4.setImageResource(R.drawable.facedown);
+        dealerCard5.setImageResource(R.drawable.facedown);
     }
     //listeners to game buttons
     class HitListener implements View.OnClickListener{
