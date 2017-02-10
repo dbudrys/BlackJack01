@@ -246,11 +246,11 @@ public class PlayActivity extends AppCompatActivity {
 
         @Override
         public void onClick(View v) {
-            /*if(){
+            
 
 
-            }*/
-        }
+
+        }//end of onClick
     }
 
 
