@@ -245,4 +245,14 @@
         android:layout_alignLeft="@+id/hold_button"
         android:layout_alignStart="@+id/hold_button" />
 
+    <TextView
+        android:text="BET AMOUNT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/fifty_button"
+        android:layout_alignLeft="@+id/Dealer_TV"
+        android:layout_alignStart="@+id/Dealer_TV"
+        android:id="@+id/player_bet_amount"
+        android:layout_alignBottom="@+id/fifty_button" />
+
 </RelativeLayout>
