@@ -150,28 +150,18 @@ public class PlayActivity extends AppCompatActivity {
         dealerCard5 = (ImageView) findViewById(R.id.Card5_D);
 
 
-
-
-
-        //set dealer begining of board
-
+/*
         playerCard1.setImageResource(R.drawable.facedown);
         playerCard2.setImageResource(R.drawable.facedown);
         playerCard3.setImageResource(R.drawable.facedown);
         playerCard4.setImageResource(R.drawable.facedown);
         playerCard5.setImageResource(R.drawable.facedown);
-
         //set dealer board
-
         dealerCard1.setImageResource(R.drawable.facedown);
         dealerCard2.setImageResource(R.drawable.facedown);
         dealerCard3.setImageResource(R.drawable.facedown);
         dealerCard4.setImageResource(R.drawable.facedown);
-
-        dealerCard5.setImageResource(R.drawable.facedown);
-
-        dealerCard5.setImageResource(R.drawable.facedown);
-
+        dealerCard5.setImageResource(R.drawable.facedown);*/
     }
 
     class PlayListener implements View.OnClickListener{
@@ -179,7 +169,7 @@ public class PlayActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
 
-           // intializeGameBoard();
+            intializeGameBoard();
 
             /*if(){
 
@@ -187,8 +177,6 @@ public class PlayActivity extends AppCompatActivity {
             }*/
         }
     }
-
-    /*
 
     protected void intializeGameBoard(){
 
@@ -202,10 +190,6 @@ public class PlayActivity extends AppCompatActivity {
         //startGame();
 
     }
-    */
-
-
-
 
     //game is ready for bets etc
     protected void startGame(){
@@ -229,7 +213,7 @@ public class PlayActivity extends AppCompatActivity {
 
         @Override
         public void onClick(View v) {
-
+    // new bet Views
             View bet25 = findViewById(R.id.twentyFive_button);
             View bet50 = findViewById(R.id.fifty_button);
             View bet100 = findViewById(R.id.hundred_button);
@@ -271,16 +255,15 @@ public class PlayActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
 
-
             Intent intent = new Intent(getApplicationContext(),
                     MainActivity.class); //Explicit intent
 
             startActivity(intent);
-            
+            /*if(){
 
 
-
-        }//end of onClick
+            }*/
+        }
     }
 
 
