@@ -138,6 +138,27 @@ public class PlayActivity extends AppCompatActivity {
         dealerCard3 = (ImageView) findViewById(R.id.Card3_D);
         dealerCard4 = (ImageView) findViewById(R.id.Card4_D);
         dealerCard5 = (ImageView) findViewById(R.id.Card5_D);
+
+
+
+
+        //set dealer begining of board
+        playerCard1.setImageResource(R.drawable.facedown);
+        playerCard2.setImageResource(R.drawable.facedown);
+        playerCard3.setImageResource(R.drawable.facedown);
+        playerCard4.setImageResource(R.drawable.facedown);
+        playerCard5.setImageResource(R.drawable.facedown);
+
+        dealerCard1.setImageResource(R.drawable.facedown);
+        dealerCard2.setImageResource(R.drawable.facedown);
+        dealerCard3.setImageResource(R.drawable.facedown);
+        dealerCard4.setImageResource(R.drawable.facedown);
+        dealerCard5.setImageResource(R.drawable.facedown);
+
+
+
+
+
     }
 
     class PlayListener implements View.OnClickListener{
@@ -145,7 +166,7 @@ public class PlayActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
 
-            intializeGameBoard();
+           // intializeGameBoard();
 
             /*if(){
 
@@ -153,6 +174,8 @@ public class PlayActivity extends AppCompatActivity {
             }*/
         }
     }
+
+    /*
 
     protected void intializeGameBoard(){
 
@@ -174,6 +197,10 @@ public class PlayActivity extends AppCompatActivity {
         startGame();
 
     }
+    */
+
+
+
 
     //game is ready for bets etc
     protected void startGame(){
