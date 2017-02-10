@@ -253,6 +253,8 @@ public class PlayActivity extends AppCompatActivity {
             randomArrayIndex = rand.nextInt(getCard.length);
 
             hitCounter++;
+
+            //testing for aces to be 11 or 1 based on sum total
             if (hitCounter ==1){
                 playerCard3.setImageResource(getCard[randomArrayIndex]);
 
