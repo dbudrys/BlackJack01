@@ -103,6 +103,10 @@ public class PlayActivity extends AppCompatActivity {
     TextView betAmount;
     TextView cashAmount;
 
+    int bankAmount;
+    int accumalatedBet;
+    int hitCounter;
+    int sum = 0;
     private int randomArrayIndex;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -199,14 +203,14 @@ public class PlayActivity extends AppCompatActivity {
 
        // View play_bt = findViewById(R.id.Play_button);
         //play_bt.setVisibility(View.GONE);
-        int sum = 0;
+
 
 
 
         Random rand = new Random();
         randomArrayIndex = rand.nextInt(getCard.length);
 
-        //if() {
+        if(accumalatedBet == 26 || accumalatedBet == 51 || accumalatedBet == 101 ) {
             playerCard1.setImageResource(getCard[randomArrayIndex]);
             sum+= number[randomArrayIndex];
         randomArrayIndex = rand.nextInt(getCard.length);
@@ -215,9 +219,12 @@ public class PlayActivity extends AppCompatActivity {
 
 
         cashAmount.setText(""+sum);
-        //}
+        }
 
+        /*if (hitCounter<4){
 
+        }
+*/
 
        // Toast.makeText(getApplicationContext(), "Your bet has been placed", Toast.LENGTH_SHORT).show();
 
@@ -241,6 +248,27 @@ public class PlayActivity extends AppCompatActivity {
 
 
             }*/
+            Random rand = new Random();
+            randomArrayIndex = rand.nextInt(getCard.length);
+
+            hitCounter++;
+            if (hitCounter ==1){
+                playerCard3.setImageResource(getCard[randomArrayIndex]);
+                sum+= number[randomArrayIndex];
+                cashAmount.setText(""+sum);
+            } else  if (hitCounter ==2){
+                playerCard4.setImageResource(getCard[randomArrayIndex]);
+                sum+= number[randomArrayIndex];
+                cashAmount.setText(""+sum);
+            } else if (hitCounter ==3){
+                playerCard5.setImageResource(getCard[randomArrayIndex]);
+                sum+= number[randomArrayIndex];
+                cashAmount.setText(""+sum);
+                
+            } else if (hitCounter>3){
+                Toast.makeText(getApplicationContext(),"You can no longer hit",Toast.LENGTH_SHORT).show();
+            }
+
         }
     }
 
@@ -256,11 +284,14 @@ public class PlayActivity extends AppCompatActivity {
 
             if(v.getId() == bet25.getId()){
                 betAmount.setText("25");
+                accumalatedBet+=26;
             } else if (v.getId() == bet50.getId()){
                 betAmount.setText("50");
+                accumalatedBet+=51;
             }
             else if(v.getId() == bet100.getId()){
                 betAmount.setText("100");
+                accumalatedBet+=101;
             }
 
 
