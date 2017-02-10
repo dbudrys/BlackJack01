@@ -213,7 +213,7 @@ public class PlayActivity extends AppCompatActivity {
 
         @Override
         public void onClick(View v) {
-
+    // new bet Views
             View bet25 = findViewById(R.id.twentyFive_button);
             View bet50 = findViewById(R.id.fifty_button);
             View bet100 = findViewById(R.id.hundred_button);
