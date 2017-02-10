@@ -213,6 +213,7 @@ public class PlayActivity extends AppCompatActivity {
         if(accumalatedBet == 26 || accumalatedBet == 51 || accumalatedBet == 101 ) {
             playerCard1.setImageResource(getCard[randomArrayIndex]);
             sum+= number[randomArrayIndex];
+
         randomArrayIndex = rand.nextInt(getCard.length);
             playerCard2.setImageResource(getCard[randomArrayIndex]);
             sum += number[randomArrayIndex];
@@ -254,17 +255,43 @@ public class PlayActivity extends AppCompatActivity {
             hitCounter++;
             if (hitCounter ==1){
                 playerCard3.setImageResource(getCard[randomArrayIndex]);
+
+
+
+                if(sum >= 11 && number[randomArrayIndex] == 11){
+                        sum+=1;
+                    cashAmount.setText(""+sum);
+                } else {
+
                 sum+= number[randomArrayIndex];
-                cashAmount.setText(""+sum);
+                cashAmount.setText(""+sum);}
+
             } else  if (hitCounter ==2){
                 playerCard4.setImageResource(getCard[randomArrayIndex]);
+
+
+
+                if(sum >= 11 && number[randomArrayIndex] == 11){
+                    sum+=1;
+                    cashAmount.setText(""+sum);
+
+                } else {
+
                 sum+= number[randomArrayIndex];
-                cashAmount.setText(""+sum);
+                cashAmount.setText(""+sum);}
+
             } else if (hitCounter ==3){
                 playerCard5.setImageResource(getCard[randomArrayIndex]);
+
+                if(sum >= 11 && number[randomArrayIndex] == 11){
+                    sum+=1;
+                    cashAmount.setText(""+sum);
+
+                }else{
+
                 sum+= number[randomArrayIndex];
-                cashAmount.setText(""+sum);
-                
+                cashAmount.setText(""+sum);}
+
             } else if (hitCounter>3){
                 Toast.makeText(getApplicationContext(),"You can no longer hit",Toast.LENGTH_SHORT).show();
             }
