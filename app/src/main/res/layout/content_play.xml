@@ -177,6 +177,8 @@
         android:textColor="@color/colorForTexr"
         android:layout_marginLeft="125dp" />
 
+    <!--
+
     <Button
         android:text="Play"
         android:id="@+id/Play_button"
@@ -186,6 +188,8 @@
         android:layout_marginTop="75dp"
         android:layout_below="@+id/Card3_D"
         android:layout_centerHorizontal="true" />
+
+        -->
 
     <ImageView
         android:layout_width="wrap_content"
