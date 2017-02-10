@@ -112,6 +112,15 @@ public class PlayActivity extends AppCompatActivity {
         dealerCard3.setImageResource(R.drawable.facedown);
         dealerCard4.setImageResource(R.drawable.facedown);
         dealerCard5.setImageResource(R.drawable.facedown);
+
+        startGame();
+
+    }
+
+    //game is ready for bets etc
+    protected void startGame(){
+
+
     }
     //listeners to game buttons
     class HitListener implements View.OnClickListener{
