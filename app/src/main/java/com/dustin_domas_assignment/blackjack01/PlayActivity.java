@@ -12,6 +12,7 @@ import android.widget.ImageView;
 public class PlayActivity extends AppCompatActivity {
 
     private int [] getCard = {
+
         R.drawable.aceofclubs,
         R.drawable.aceofdiamonds,
             R.drawable.aceofhearts,
@@ -44,7 +45,30 @@ public class PlayActivity extends AppCompatActivity {
             R.drawable.queenofhearts,
             R.drawable.queenofspades,
             R.drawable.quessofclubs,
-            
+
+            R.drawable.sevenofcluns,
+            R.drawable.sevenofdiamonds,
+            R.drawable.sevenofhearts,
+            R.drawable.sevenofspades,
+            R.drawable.sixofclubs,
+            R.drawable.sixofdiamonds,
+            R.drawable.sixofhearts,
+            R.drawable.sixofspades,
+            R.drawable.tenofclubs,
+            R.drawable.tenofdiamonds,
+            R.drawable.tenofhearts,
+            R.drawable.tenofspades,
+            R.drawable.threeofclubs,
+            R.drawable.threeofdiamonds,
+            R.drawable.threeofhearts,
+            R.drawable.threeofspades,
+            R.drawable.twoofclubs,
+            R.drawable.twoofdiamonds,
+            R.drawable.twoofhearts,
+            R.drawable.twoofclubs,
+            R.drawable.twoofspades
+
+
 
 
     };
