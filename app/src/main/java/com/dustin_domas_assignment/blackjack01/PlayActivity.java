@@ -1,5 +1,6 @@
 package com.dustin_domas_assignment.blackjack01;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,6 +9,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class PlayActivity extends AppCompatActivity {
 
@@ -85,6 +88,9 @@ public class PlayActivity extends AppCompatActivity {
     ImageView dealerCard4;
     ImageView dealerCard5;
 
+    TextView betAmount;
+    TextView cashAmount;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -110,7 +116,7 @@ public class PlayActivity extends AppCompatActivity {
         //New game buttons
         Button hit_button = new Button(this);
         findViewById(R.id.hit_button).setOnClickListener(new HitListener());
-        Button bet25_button;
+
         findViewById(R.id.twentyFive_button).setOnClickListener(new BetListener());
         Button bet50_button;
         findViewById(R.id.fifty_button).setOnClickListener(new BetListener());
@@ -121,7 +127,11 @@ public class PlayActivity extends AppCompatActivity {
         Button exit_button;
         findViewById(R.id.exit_button).setOnClickListener(new ExitListener());
 
-        findViewById(R.id.Play_button).setOnClickListener(new PlayListener());
+       // findViewById(R.id.Play_button).setOnClickListener(new PlayListener());
+
+
+        cashAmount = (TextView ) findViewById(R.id.Player_CashView);
+        betAmount = (TextView) findViewById(R.id.player_bet_amount);
 
 
         //findViewById(R.id.sound_button).setOnClickListener(new StartListener());
@@ -142,22 +152,25 @@ public class PlayActivity extends AppCompatActivity {
 
 
 
+
         //set dealer begining of board
+
         playerCard1.setImageResource(R.drawable.facedown);
         playerCard2.setImageResource(R.drawable.facedown);
         playerCard3.setImageResource(R.drawable.facedown);
         playerCard4.setImageResource(R.drawable.facedown);
         playerCard5.setImageResource(R.drawable.facedown);
 
+        //set dealer board
+
         dealerCard1.setImageResource(R.drawable.facedown);
         dealerCard2.setImageResource(R.drawable.facedown);
         dealerCard3.setImageResource(R.drawable.facedown);
         dealerCard4.setImageResource(R.drawable.facedown);
+
         dealerCard5.setImageResource(R.drawable.facedown);
 
-
-
-
+        dealerCard5.setImageResource(R.drawable.facedown);
 
     }
 
@@ -179,22 +192,14 @@ public class PlayActivity extends AppCompatActivity {
 
     protected void intializeGameBoard(){
 
-        View play_bt = findViewById(R.id.Play_button);
-        play_bt.setVisibility(View.GONE);
+       // View play_bt = findViewById(R.id.Play_button);
+        //play_bt.setVisibility(View.GONE);
 
-        playerCard1.setImageResource(R.drawable.facedown);
-        playerCard2.setImageResource(R.drawable.facedown);
-        playerCard3.setImageResource(R.drawable.facedown);
-        playerCard4.setImageResource(R.drawable.facedown);
-        playerCard5.setImageResource(R.drawable.facedown);
-        //set dealer board
-        dealerCard1.setImageResource(R.drawable.facedown);
-        dealerCard2.setImageResource(R.drawable.facedown);
-        dealerCard3.setImageResource(R.drawable.facedown);
-        dealerCard4.setImageResource(R.drawable.facedown);
-        dealerCard5.setImageResource(R.drawable.facedown);
 
-        startGame();
+        Toast.makeText(getApplicationContext(), "Your bet has been placed", Toast.LENGTH_SHORT).show();
+
+
+        //startGame();
 
     }
     */
@@ -224,10 +229,29 @@ public class PlayActivity extends AppCompatActivity {
 
         @Override
         public void onClick(View v) {
-            /*if(){
+
+            View bet25 = findViewById(R.id.twentyFive_button);
+            View bet50 = findViewById(R.id.fifty_button);
+            View bet100 = findViewById(R.id.hundred_button);
 
 
-            }*/
+            if(v.getId() == bet25.getId()){
+                betAmount.setText("25");
+            } else if (v.getId() == bet50.getId()){
+                betAmount.setText("50");
+            }
+            else if(v.getId() == bet100.getId()){
+                betAmount.setText("100");
+            }
+
+
+                intializeGameBoard();
+
+
+
+
+
+
         }
     }
 
@@ -246,6 +270,12 @@ public class PlayActivity extends AppCompatActivity {
 
         @Override
         public void onClick(View v) {
+
+
+            Intent intent = new Intent(getApplicationContext(),
+                    MainActivity.class); //Explicit intent
+
+            startActivity(intent);
             
 
 
