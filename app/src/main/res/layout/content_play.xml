@@ -259,4 +259,16 @@
         android:id="@+id/player_bet_amount"
         android:layout_alignBottom="@+id/fifty_button" />
 
+    <TextView
+        android:text="CARD TOTAL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Player_CashView"
+        android:layout_toEndOf="@+id/Card4_P"
+        android:id="@+id/card_total"
+        android:textSize="20sp"
+        android:layout_alignLeft="@+id/hit_button"
+        android:layout_alignStart="@+id/hit_button"
+        android:textColor="@color/colorForTexr" />
+
 </RelativeLayout>
