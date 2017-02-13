@@ -1,7 +1,9 @@
 package com.dustin_domas_assignment.blackjack01;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -17,60 +19,21 @@ import java.util.Random;
 public class PlayActivity extends AppCompatActivity {
 
     private int [] getCard = {
-            R.drawable.aceofclubs,
-            R.drawable.aceofdiamonds,
-            R.drawable.aceofhearts,
-            R.drawable.aceofspades,
-            R.drawable.eightofclubs,
-            R.drawable.eightofdiamonds,
-            R.drawable.eightofhearts,
-            R.drawable.eightofspades,
-            R.drawable.fiveofclubs,
-            R.drawable.fiveofdiamonds,
-            R.drawable.fiveofhearts,
-            R.drawable.fiveofspades,
-            R.drawable.fourofclubs,
-            R.drawable.fourofdiamonds,
-            R.drawable.fourofhearts,
-            R.drawable.fourofspades,
-            R.drawable.jackofclubs,
-            R.drawable.jackofdiamonds,
-            R.drawable.jackofhearts,
-            R.drawable.jackofspades,
-            R.drawable.kingofclubs,
-            R.drawable.kingofdiamonds,
-            R.drawable.kingofhearts,
-            R.drawable.kingofspades,
-            R.drawable.nineofclubs,
-            R.drawable.nineofdiamonds,
-            R.drawable.nineofhearts,
-            R.drawable.nineofspades,
-            R.drawable.queenofdiamonds,
-            R.drawable.queenofhearts,
-            R.drawable.queenofspades,
-            R.drawable.quessofclubs,
+            R.drawable.aceofclubs, R.drawable.aceofdiamonds, R.drawable.aceofhearts, R.drawable.aceofspades,
+            R.drawable.eightofclubs, R.drawable.eightofdiamonds, R.drawable.eightofhearts, R.drawable.eightofspades,
+            R.drawable.fiveofclubs, R.drawable.fiveofdiamonds, R.drawable.fiveofhearts, R.drawable.fiveofspades,
+            R.drawable.fourofclubs, R.drawable.fourofdiamonds, R.drawable.fourofhearts, R.drawable.fourofspades,
+            R.drawable.jackofclubs, R.drawable.jackofdiamonds, R.drawable.jackofhearts, R.drawable.jackofspades,
+            R.drawable.kingofclubs, R.drawable.kingofdiamonds, R.drawable.kingofhearts, R.drawable.kingofspades,
+            R.drawable.nineofclubs, R.drawable.nineofdiamonds, R.drawable.nineofhearts, R.drawable.nineofspades,
+            R.drawable.queenofdiamonds, R.drawable.queenofhearts, R.drawable.queenofspades, R.drawable.quessofclubs,
 
-            R.drawable.sevenofcluns,
-            R.drawable.sevenofdiamonds,
-            R.drawable.sevenofhearts,
-            R.drawable.sevenofspades,
-            R.drawable.sixofclubs,
-            R.drawable.sixofdiamonds,
-            R.drawable.sixofhearts,
-            R.drawable.sixofspades,
-            R.drawable.tenofclubs,
-            R.drawable.tenofdiamonds,
-            R.drawable.tenofhearts,
-            R.drawable.tenofspades,
-            R.drawable.threeofclubs,
-            R.drawable.threeofdiamonds,
-            R.drawable.threeofhearts,
-            R.drawable.threeofspades,
-            R.drawable.twoofclubs,
-            R.drawable.twoofdiamonds,
-            R.drawable.twoofhearts,
-            R.drawable.twoofclubs,
-            R.drawable.twoofspades };
+            R.drawable.sevenofcluns, R.drawable.sevenofdiamonds, R.drawable.sevenofhearts, R.drawable.sevenofspades,
+            R.drawable.sixofclubs, R.drawable.sixofdiamonds, R.drawable.sixofhearts, R.drawable.sixofspades,
+            R.drawable.tenofclubs, R.drawable.tenofdiamonds, R.drawable.tenofhearts, R.drawable.tenofspades,
+            R.drawable.threeofclubs, R.drawable.threeofdiamonds, R.drawable.threeofhearts, R.drawable.threeofspades,
+            R.drawable.twoofclubs, R.drawable.twoofdiamonds, R.drawable.twoofhearts, R.drawable.twoofspades
+    };
 
     //Number array holds the values of the cards in the equivalent element as
     //to the card in the getCard array with its drawable ID
@@ -106,12 +69,17 @@ public class PlayActivity extends AppCompatActivity {
     TextView cashAmount;
     TextView cardAmount;
 
+
     int bankAmount=0;
     int accumalatedBet;
     int hitCounter;
     int sum = 0;
+    int DealerSum=0;
     int playerCash = 500;
+    int holdCount = 0;
+    int flipModCounter = 0;
     private int randomArrayIndex;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -138,6 +106,7 @@ public class PlayActivity extends AppCompatActivity {
         cashAmount = (TextView ) findViewById(R.id.Player_CashView);
         betAmount = (TextView) findViewById(R.id.player_bet_amount);
         cardAmount = (TextView) findViewById(R.id.card_total);
+
 
         //findViewById(R.id.sound_button).setOnClickListener(new StartListener());
 
@@ -213,7 +182,7 @@ public class PlayActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "You win!!! $"+ betAmount,Toast.LENGTH_SHORT).show();
                 playerCash += (accumalatedBet-1);
                 cashAmount.setText(""+playerCash);
-                resetGameboard();
+                delayedOPtion();
             }
         }
 
@@ -233,11 +202,15 @@ public class PlayActivity extends AppCompatActivity {
     ******************************************************* */
     protected void resetGameboard(){
 
+            //onPause();
+
 
             accumalatedBet = 0;
             hitCounter = 0;
             sum = 0;
-
+            holdCount = 0;
+            flipModCounter = 0;
+        
         cardAmount.setText(""+sum);
 
         playerCard1.setImageResource(R.drawable.facedown);
@@ -285,42 +258,42 @@ public class PlayActivity extends AppCompatActivity {
 
                     //21 ifstatement
                     if(sum == 21){
-                        Toast.makeText(getApplicationContext(), "You win!!! $"+ ""+betAmount,Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "You win!!! $",Toast.LENGTH_SHORT).show();
                         playerCash += (accumalatedBet-1);
                         cashAmount.setText(""+playerCash);
-                        onPause();
-                        resetGameboard();
+
+                        delayedOPtion();
                     }
                      /* Bust Check if statement*/
                     if (sum > 21){
                         Toast.makeText(getApplicationContext(),"You BUSTED!!!!!!!!!!", Toast.LENGTH_SHORT).show();
                         playerCash -= (accumalatedBet-1);
                         cashAmount.setText(""+playerCash);
-                        resetGameboard();
+                        delayedOPtion();
                     }//end Bust check
 
                 } else {
                     sum += number[randomArrayIndex];
-                    cardAmount.setText(""+sum);
+                    cardAmount.setText("" + sum);
                     //21 check if statement
-                    if(sum == 21){
-                        Toast.makeText(getApplicationContext(), "You win!!! $"+ betAmount,Toast.LENGTH_SHORT).show();
-                        playerCash += (accumalatedBet-1);
-                        cashAmount.setText(""+playerCash);
-                        resetGameboard();
-                    }else if (sum > 21){
-                        Toast.makeText(getApplicationContext(),"You BUSTED!!!!!!!!!!", Toast.LENGTH_SHORT).show();
-                        playerCash -= (accumalatedBet-1);
-                        cashAmount.setText(""+playerCash);
-                        resetGameboard();
+                    if (sum == 21) {
+                        Toast.makeText(getApplicationContext(), "You win!!! $", Toast.LENGTH_SHORT).show();
+                        playerCash += (accumalatedBet - 1);
+                        cashAmount.setText("" + playerCash);
+                        delayedOPtion();
+                    } else if (sum > 21) {
+                        Toast.makeText(getApplicationContext(), "You BUSTED!!!!!!!!!!", Toast.LENGTH_SHORT).show();
+                        playerCash -= (accumalatedBet - 1);
+                        cashAmount.setText("" + playerCash);
+                        delayedOPtion();
                     }//end Bust check
 
 
-
-                    }//end of first hit button if statement
+                }
+                    //end of first hit button if statement
 
                 //second hit button if statement
-            } else  if (hitCounter ==2){
+            } else if (hitCounter ==2){
                 playerCard4.setImageResource(getCard[randomArrayIndex]);
 
 
@@ -331,12 +304,12 @@ public class PlayActivity extends AppCompatActivity {
 
                     //21 if statement
                     if(sum == 21){
-                        Toast.makeText(getApplicationContext(), "You win!!! $"+ betAmount,Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "You win!!! $",Toast.LENGTH_SHORT).show();
                         playerCash += (accumalatedBet-1);
                         cashAmount.setText(""+playerCash);
 
-                        //intializeGameBoard();
-                        resetGameboard();
+
+                        delayedOPtion();
 
                     } else
                     /* Bust Check if statement*/
@@ -344,7 +317,7 @@ public class PlayActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(),"You BUSTED!!!!!!!!!!", Toast.LENGTH_SHORT).show();
                         playerCash -= (accumalatedBet-1);
                         cashAmount.setText(""+playerCash);
-                        resetGameboard();
+                        delayedOPtion();
                     }//end Bust check
 
 
@@ -353,16 +326,18 @@ public class PlayActivity extends AppCompatActivity {
                     cardAmount.setText(""+sum);
                         //added the if statement to the else
                     if(sum == 21){
-                        Toast.makeText(getApplicationContext(), "You win!!! $"+ betAmount,Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "You win!!! $",Toast.LENGTH_SHORT).show();
                         playerCash += (accumalatedBet-1);
                         cashAmount.setText(""+playerCash);
-                        resetGameboard();
+                        delayedOPtion();
                     }else if (sum > 21){
                         Toast.makeText(getApplicationContext(),"You BUSTED!!!!!!!!!!", Toast.LENGTH_SHORT).show();
                         playerCash -= (accumalatedBet-1);
                         cashAmount.setText(""+playerCash);
-                        resetGameboard();
+                        delayedOPtion();
                     }//end Bust check
+
+
 
                 }//end second hit if statement
                 //Third hit button if statement
@@ -376,10 +351,10 @@ public class PlayActivity extends AppCompatActivity {
 
                     //21 check if statement
                     if(sum == 21){
-                        Toast.makeText(getApplicationContext(), "You win!!! $"+ betAmount,Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "You win!!! $",Toast.LENGTH_SHORT).show();
                         playerCash += (accumalatedBet-1);
                         cashAmount.setText(""+playerCash);
-                        resetGameboard();
+                        delayedOPtion();
                     }else
                         cardAmount.setText(""+sum);
                       /* Bust Check if statement*/
@@ -387,7 +362,7 @@ public class PlayActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(),"You BUSTED!!!!!!!!!!", Toast.LENGTH_SHORT).show();
                         playerCash -= (accumalatedBet-1);
                         cashAmount.setText(""+playerCash);
-                        resetGameboard();
+                        delayedOPtion();
                     }//end Bust check
 
                 }else{
@@ -395,15 +370,15 @@ public class PlayActivity extends AppCompatActivity {
                     cardAmount.setText(""+sum);
                     //21 check if statement
                     if(sum == 21){
-                        Toast.makeText(getApplicationContext(), "You win!!! $"+ betAmount,Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "You win!!! $",Toast.LENGTH_SHORT).show();
                         playerCash += (accumalatedBet-1);
                         cashAmount.setText(""+playerCash);
-                        resetGameboard();
+                        delayedOPtion();
                     }else if (sum > 21){
                         Toast.makeText(getApplicationContext(),"You BUSTED!!!!!!!!!!", Toast.LENGTH_SHORT).show();
                         playerCash -= (accumalatedBet-1);
                         cashAmount.setText(""+playerCash);
-                        resetGameboard();
+                        delayedOPtion();
                     }//end Bust check
 
 
@@ -415,6 +390,32 @@ public class PlayActivity extends AppCompatActivity {
             }
 
         }
+    }
+
+
+    protected void delayedOPtion(){
+
+        if(sum == 21){
+            final Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    // 5s = 5000ms
+                    resetGameboard();
+                }
+            }, 3000);
+        }
+        if (sum > 21) {
+            final Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    // 5s = 5000ms
+                    resetGameboard();
+                }
+            }, 3000);
+        }
+
     }
 
     /***********************************************************************
@@ -457,11 +458,59 @@ public class PlayActivity extends AppCompatActivity {
 
     class HoldListener implements View.OnClickListener{
 
+
+
         @Override
         public void onClick(View v) {
 
+
+            Random rand = new Random();
+            randomArrayIndex = rand.nextInt(getCard.length);
+
+            //prevent the dealers cards to be changed during the hand
+            if(holdCount == 0) {
+                dealerCard1.setImageResource(getCard[randomArrayIndex]);
+                DealerSum += number[randomArrayIndex];
+                randomArrayIndex = rand.nextInt(getCard.length);
+                dealerCard2.setImageResource(getCard[randomArrayIndex]);
+                DealerSum += number[randomArrayIndex];
+                holdCount++;
+            }
+
+            if(DealerSum < sum && flipModCounter < 4){
+
+
+                dealerFlipModulator(flipModCounter);
+                flipModCounter++;
+
+            }
+
+
+
+
+        }
+
+        protected void dealerFlipModulator(int x){
+
+
+            Random rand = new Random();
+            randomArrayIndex = rand.nextInt(getCard.length);
+            ImageView [] dealerArray = {dealerCard3, dealerCard4, dealerCard5 };
+
+            if(DealerSum < sum && flipModCounter<4) {
+
+                randomArrayIndex = rand.nextInt(getCard.length);
+                dealerArray[flipModCounter].setImageResource(getCard[randomArrayIndex]);
+
+            }
+
+
+
+
         }
     }
+
+
 
 
     /******************************************************************
