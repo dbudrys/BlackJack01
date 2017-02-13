@@ -271,4 +271,14 @@
         android:layout_alignStart="@+id/hit_button"
         android:textColor="@color/colorForTexr" />
 
+    <TextView
+        android:text="Card total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/Dealer_TV"
+        android:layout_alignLeft="@+id/Moves_View"
+        android:layout_alignStart="@+id/Moves_View"
+        android:id="@+id/dealerCardAmount"
+        android:textSize="20sp" />
+
 </RelativeLayout>
