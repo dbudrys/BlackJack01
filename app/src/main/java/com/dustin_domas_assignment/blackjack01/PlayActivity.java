@@ -68,7 +68,7 @@ public class PlayActivity extends AppCompatActivity {
     TextView betAmount;
     TextView cashAmount;
     TextView cardAmount;
-
+    TextView dealerCardAmount;
 
     int bankAmount=0;
     int accumalatedBet;
@@ -106,7 +106,7 @@ public class PlayActivity extends AppCompatActivity {
         cashAmount = (TextView ) findViewById(R.id.Player_CashView);
         betAmount = (TextView) findViewById(R.id.player_bet_amount);
         cardAmount = (TextView) findViewById(R.id.card_total);
-
+        dealerCardAmount = (TextView) findViewById(R.id.dealerCardAmount);
 
         //findViewById(R.id.sound_button).setOnClickListener(new StartListener());
 
@@ -210,7 +210,8 @@ public class PlayActivity extends AppCompatActivity {
             sum = 0;
             holdCount = 0;
             flipModCounter = 0;
-        
+            DealerSum = 0;
+
         cardAmount.setText(""+sum);
 
         playerCard1.setImageResource(R.drawable.facedown);
@@ -416,6 +417,67 @@ public class PlayActivity extends AppCompatActivity {
             }, 3000);
         }
 
+        if(sum > DealerSum && sum <22){
+
+            Toast.makeText(getApplicationContext(),"YOU WINNNNN!!!!$$!$!$!!$$!$!$",Toast.LENGTH_SHORT).show();
+            playerCash += (accumalatedBet-1);
+            cashAmount.setText(""+playerCash);
+
+
+            final Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    // 5s = 5000ms
+                    resetGameboard();
+                }
+            }, 3000);
+
+
+        } else if(DealerSum > sum && DealerSum <22){
+            Toast.makeText(getApplicationContext(),"YOU ARE A LOSER!",Toast.LENGTH_SHORT).show();
+            playerCash -= (accumalatedBet-1);
+            cashAmount.setText(""+playerCash);
+
+            final Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    // 5s = 5000ms
+                    resetGameboard();
+                }
+            }, 3000);
+
+
+        } else if(DealerSum == sum && DealerSum < 22){
+            Toast.makeText(getApplicationContext(),"YOU ARE A LOSER!",Toast.LENGTH_SHORT).show();
+            playerCash -= (accumalatedBet-1);
+            cashAmount.setText(""+playerCash);
+
+            final Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    // 5s = 5000ms
+                    resetGameboard();
+                }
+            }, 3000);
+        } else if(DealerSum >= 22){
+            Toast.makeText(getApplicationContext(),"DEALER BUSTED!! YOU WINNNNN!!!!$$!$!$!!$$!$!$",Toast.LENGTH_SHORT).show();
+            playerCash += (accumalatedBet-1);
+            cashAmount.setText(""+playerCash);
+
+
+            final Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    // 5s = 5000ms
+                    resetGameboard();
+                }
+            }, 3000);
+
+        }
     }
 
     /***********************************************************************
@@ -462,8 +524,8 @@ public class PlayActivity extends AppCompatActivity {
 
         @Override
         public void onClick(View v) {
-
-
+            DealerSum = 0;
+            randomArrayIndex = 0;
             Random rand = new Random();
             randomArrayIndex = rand.nextInt(getCard.length);
 
@@ -474,14 +536,22 @@ public class PlayActivity extends AppCompatActivity {
                 randomArrayIndex = rand.nextInt(getCard.length);
                 dealerCard2.setImageResource(getCard[randomArrayIndex]);
                 DealerSum += number[randomArrayIndex];
+
+                dealerCardAmount.setText(""+DealerSum);
                 holdCount++;
             }
 
-            if(DealerSum < sum && flipModCounter < 4){
+            if(DealerSum > sum){
+                delayedOPtion();
+            }else if(DealerSum >= 22){
+                delayedOPtion();
+            }
+
+            if(DealerSum <= sum ){
 
 
                 dealerFlipModulator(flipModCounter);
-                flipModCounter++;
+
 
             }
 
@@ -490,22 +560,40 @@ public class PlayActivity extends AppCompatActivity {
 
         }
 
-        protected void dealerFlipModulator(int x){
+        public void dealerFlipModulator(int x){
 
-
+           // flipModCounter++;
+            randomArrayIndex = 0;
             Random rand = new Random();
-            randomArrayIndex = rand.nextInt(getCard.length);
+
             ImageView [] dealerArray = {dealerCard3, dealerCard4, dealerCard5 };
 
-            if(DealerSum < sum && flipModCounter<4) {
+            if(DealerSum <= sum ) {
 
                 randomArrayIndex = rand.nextInt(getCard.length);
+
                 dealerArray[flipModCounter].setImageResource(getCard[randomArrayIndex]);
 
+
+                DealerSum += number[randomArrayIndex];
+                dealerCardAmount.setText(""+DealerSum);
+                flipModCounter+=1;
+
+                if(DealerSum > sum){
+                    delayedOPtion();
+                }else if(DealerSum >=22){
+                    delayedOPtion();
+                }
+
+
+                dealerFlipModulator(flipModCounter);
             }
 
 
 
+
+            //delayedOPtion();
+           // dealerFlipModulator(flipModCounter);
 
         }
     }
